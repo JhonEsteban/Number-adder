@@ -12,46 +12,43 @@ form.addEventListener('submit', (e) => {
 });
 
 
-const validarCampos = ( n1, n2 ) => {
+const validarCampos = ( numero1, numero2 ) => {
 
-  if ( isNaN(n1) || isNaN(n2)  ) {
-    mostrarError('Solo debes ingresar valores numericos');
+  if ( isNaN(numero1) || isNaN(numero2)  ) {
+    mostrarError('Solo debes ingresar valores numéricos');
     
-  }else if ( n1 <= 0  || n2 <= 0 ) {
-    mostrarError('Ingresa valores numericos mayores a cero');
+  }else if ( numero1 < 0  || numero2 < 0 ) {
+    mostrarError('Ingresa valores numéricos iguales o mayores a cero');
 
   }else {
-    sumarNumeros( Number(n1), Number(n2) );
+    sumarNumeros( Number(numero1), Number(numero2) );
   }
 
+}
+
+const mostrarError = ( mensaje ) => {
+  
+  const alerta = document.createElement('div');
+  alerta.setAttribute('class', 'alert');
+  alerta.textContent = mensaje;
+
+  const container = document.querySelector('.container');
+  container.insertAdjacentElement('afterbegin', alerta );
+
+  setTimeout(() => container.firstElementChild.remove() , 3000 );
 }
 
 
 const sumarNumeros = ( numero1, numero2 )  => {
   let resultado = numero1 + numero2;
-  renderizarResultado( resultado);
+  renderizarResultado( resultado );
 }
 
 
-const renderizarResultado = ( resultado) => {
+const renderizarResultado = ( resultado ) => {
 
   const contenedor = document.querySelector('.resultado > p');
   contenedor.textContent = '';
 
   contenedor.textContent = `Resultado: ${ resultado }`;
 }
-
-
-const mostrarError = (mensaje) => {
-  
-  const alert = document.createElement('div');
-  alert.setAttribute('class', 'alert');
-  alert.textContent = mensaje;
-
-  const container = document.querySelector('.container');
-
-  container.insertAdjacentElement('afterbegin', alert );
-
-  setTimeout(() => container.firstElementChild.remove() , 4000 );
-}
-
