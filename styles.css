@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+span {  
+  display: block;
+  margin-bottom: 10px;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 5vh auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 0;
+
+}
+
+input[type="text"], 
+input[type="submit"] {
+  margin-bottom: 30px;
+}
+
+input[type="submit"] {
+  width: 120px;
+  margin: 10px auto;
+  padding: 5px 10px;
+}
+
+
+.alert {
+  width: 220px;
+  height: auto;
+  margin-top: 30px;
+  padding: 10px;
+  margin: auto;
+  font-size: 1.7rem;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: red;
+  color: #fff;
+}
+
+
+.resultado {
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  border: 1px solid red;
+  margin-bottom: 10px;
+}
